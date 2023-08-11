@@ -13,6 +13,16 @@ public class AdminPalabrasSecretas {
 
     public AdminPalabrasSecretas() {
         this.palabrasSecretas = new ArrayList<>();
+        palabrasSecretas.add("Lana");
+        palabrasSecretas.add("Ingeniera");
+        palabrasSecretas.add("Muneca");
+        palabrasSecretas.add("Bonita");
+        palabrasSecretas.add("Estrella");
+        palabrasSecretas.add("Cielo");
+        palabrasSecretas.add("Luz");
+        palabrasSecretas.add("Bruja");
+        palabrasSecretas.add("Infiel");
+        palabrasSecretas.add("Swiftie");
     }
 
     public void agregarPalabraSecreta(String palabra) {

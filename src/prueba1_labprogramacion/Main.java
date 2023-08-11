@@ -73,12 +73,13 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorActionPerformed
-        
+        Administrador admin=new Administrador(this);
+        admin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAdministradorActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-    
-        Jugar play=new Jugar();
+        Jugar play=new Jugar(this);
         play.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnJugarActionPerformed

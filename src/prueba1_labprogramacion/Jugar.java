@@ -1,9 +1,13 @@
 package prueba1_labprogramacion;
 
 public class Jugar extends javax.swing.JFrame {
-
-    public Jugar() {
+    Main main;
+     static JuegoAhorcadoAzar azar;
+    static JuegoAhorcadoBase base;
+    
+    public Jugar(Main main) {
         initComponents();
+        this.main=main;
     }
 
     @SuppressWarnings("unchecked")
