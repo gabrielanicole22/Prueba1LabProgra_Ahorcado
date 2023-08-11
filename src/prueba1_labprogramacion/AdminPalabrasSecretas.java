@@ -15,6 +15,7 @@ public class AdminPalabrasSecretas {
      
 
     public AdminPalabrasSecretas() {
+        if (Administrador.EsModoAleatorio){
         this.palabrasSecretas = new ArrayList<>();
         palabrasSecretas.add("lana");
         palabrasSecretas.add("ingeniera");
@@ -26,13 +27,17 @@ public class AdminPalabrasSecretas {
         palabrasSecretas.add("bruja");
         palabrasSecretas.add("infiel");
         palabrasSecretas.add("swiftie");
-        seleccionarPalabraAzar();
+        seleccionarPalabraAzar();}
     }
 
     public void agregarPalabraSecreta(String palabra) {
         this.palabra=palabra;
     }
 
+    public void PalabraFija(){
+        String palabra="";
+        agregarPalabraSecreta(palabra);
+    }
     public void seleccionarPalabraAzar() {
         Random random = new Random();
         int index = random.nextInt(palabrasSecretas.size());

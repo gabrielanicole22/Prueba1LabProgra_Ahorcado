@@ -15,7 +15,7 @@ int IntentosRestantes = 6;
         this.main = main;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        adminPalabrasSecretas = new AdminPalabrasSecretas();
+        
         String PalabraInicial = adminPalabrasSecretas.palabraSecreta();
         jTextArea1.setText("_".repeat(PalabraInicial.length()));
     }
