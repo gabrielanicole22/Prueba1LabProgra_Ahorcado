@@ -16,8 +16,11 @@ public class Administrador extends javax.swing.JFrame {
      * Creates new form Administrador
      */
     public Main main;
-    public Administrador(Main main) {
+    AdminPalabrasSecretas admin;
+    
+    public Administrador(Main main,AdminPalabrasSecretas admin) {
         initComponents();
+        this.admin=admin;
         this.main=main;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);        
     }
@@ -78,7 +81,7 @@ public class Administrador extends javax.swing.JFrame {
         // TODO add your handling code here:
         EsModoFijo=true;
         EsModoAleatorio=false;
-        IngresarPalabraFija dificultad = new IngresarPalabraFija();
+        IngresarPalabraFija dificultad = new IngresarPalabraFija(main,admin);
         dificultad.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnModoFijoActionPerformed

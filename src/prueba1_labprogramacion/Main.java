@@ -5,10 +5,16 @@ public class Main extends javax.swing.JFrame {
     static JuegoAhorcadoAzar azar;
     static JuegoAhorcadoBase base;
     
+    AdminPalabrasSecretas admin;
+    
     public Main() {
         initComponents();
+        this.admin=new AdminPalabrasSecretas();
     }
     
+    public void setAdmin(AdminPalabrasSecretas admin){
+        this.admin=admin;
+    }
     
     
     @SuppressWarnings("unchecked")
@@ -73,8 +79,8 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorActionPerformed
-        Administrador admin=new Administrador(this);
-        admin.setVisible(true);
+        Administrador aadmin=new Administrador(this,admin);
+        aadmin.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAdministradorActionPerformed
 

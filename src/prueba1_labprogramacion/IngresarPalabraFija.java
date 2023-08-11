@@ -5,11 +5,11 @@ import javax.swing.JOptionPane;
 
 
 public class IngresarPalabraFija extends javax.swing.JFrame {
-AdminPalabrasSecretas adminPalabrasSecretas;
+        AdminPalabrasSecretas admin;
     
-    
-    public IngresarPalabraFija() {
+    public IngresarPalabraFija( Main main,AdminPalabrasSecretas admin) {
         initComponents();
+        this.admin=admin;
     }
 
   
@@ -76,7 +76,7 @@ AdminPalabrasSecretas adminPalabrasSecretas;
        if( txtPalabraFija.getText().isEmpty() ){
            JOptionPane.showMessageDialog(null, "LLene todos los campos");
        }else{
-              adminPalabrasSecretas.agregarPalabraSecreta(tipo);
+              admin.agregarPalabraSecreta(tipo);
                 
                     JOptionPane.showMessageDialog(null, "Palabra agregada! ");
 
