@@ -32,17 +32,13 @@ public class AdminPalabrasSecretas {
         this.palabra=palabra;
     }
 
-    public String seleccionarPalabraAzar() {
+    public void seleccionarPalabraAzar() {
         Random random = new Random();
         int index = random.nextInt(palabrasSecretas.size());
-        return palabrasSecretas.get(index);
+        palabra=palabrasSecretas.get(index);
     }
     
-    public String palabraSecreta(boolean random){
-        if(random){
-            palabra=seleccionarPalabraAzar();
-        }
-        
+    public String palabraSecreta( ){
         return palabra;
     }
 }

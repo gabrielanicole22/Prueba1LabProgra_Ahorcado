@@ -6,9 +6,8 @@ public class Main extends javax.swing.JFrame {
     
     static JuegoAhorcadoAzar azar;
     static JuegoAhorcadoBase base;
-    
     AdminPalabrasSecretas admin;
-    
+    boolean random=Administrador.EsModoAleatorio;
     public Main() {
         initComponents();
         this.admin=new AdminPalabrasSecretas();
@@ -80,6 +79,7 @@ public class Main extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorActionPerformed
@@ -92,7 +92,7 @@ public class Main extends javax.swing.JFrame {
 //        Jugar play=new Jugar(this);
 //        play.setVisible(true);
 //        this.dispose
-JOptionPane.showMessageDialog(null,  admin.palabraSecreta(false));
+JOptionPane.showMessageDialog(null,  admin.palabraSecreta());
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

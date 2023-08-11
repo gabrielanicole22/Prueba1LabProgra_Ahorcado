@@ -9,9 +9,8 @@ package prueba1_labprogramacion;
  * @author Gabriela Mejía
  */
 public class Administrador extends javax.swing.JFrame {
-
-    static boolean EsModoFijo=true;
-    static boolean EsModoAleatorio=false;
+    public static boolean EsModoFijo=true;
+    public static boolean EsModoAleatorio=false;
     /**
      * Creates new form Administrador
      */
@@ -75,6 +74,7 @@ public class Administrador extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoFijoActionPerformed
@@ -88,8 +88,9 @@ public class Administrador extends javax.swing.JFrame {
 
     private void btnModoAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoAleatorioActionPerformed
         // TODO add your handling code here:
-        EsModoFijo=false;
         EsModoAleatorio=true;
+                EsModoFijo=false;
+                admin.seleccionarPalabraAzar();
         this.dispose();
     }//GEN-LAST:event_btnModoAleatorioActionPerformed
 
