@@ -3,12 +3,12 @@ package prueba1_labprogramacion;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class JuegoAhorcadoAzar {
+public class JuegoAhorcadoAzar extends JuegoAhorcadoBase{
 
     private ArrayList<String> palabras;
 
     public JuegoAhorcadoAzar() {
-        //super ()
+        super (); 
         
         palabras = new ArrayList<>();
         palabras.add("dragon");
@@ -28,6 +28,22 @@ public class JuegoAhorcadoAzar {
         
     
     return palabras.remove(numeroaleatorio);
+    }
+
+    void actualizarPalabraActual(char letra) {
+    
+    }
+
+   void verificarLetra(char letra) {
+    }
+
+    void hasGanado() {
+    }
+
+    public void inicializarPalabraSecreta() {
+        
+    }
+    public void jugar() {
     }
 
 }
