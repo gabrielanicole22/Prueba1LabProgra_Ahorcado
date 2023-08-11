@@ -1,4 +1,3 @@
-
 package prueba1_labprogramacion;
 
 import javax.swing.JOptionPane;
@@ -11,7 +10,6 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
         initComponents();
         this.admin=admin;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
     }
 
   
@@ -82,7 +80,7 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
             admin.agregarPalabraSecreta(tipo);
 
             JOptionPane.showMessageDialog(null, "Palabra agregada! ");
-            this.dispose();
+
         }
     }//GEN-LAST:event_btnEstablecerPalabraFijaActionPerformed
 

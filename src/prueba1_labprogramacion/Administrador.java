@@ -9,19 +9,20 @@ package prueba1_labprogramacion;
  * @author Gabriela Mejía
  */
 public class Administrador extends javax.swing.JFrame {
-    public static boolean EsModoFijo=true;
-    public static boolean EsModoAleatorio=false;
+
+    public static boolean EsModoFijo = true;
+    public static boolean EsModoAleatorio = false;
     /**
      * Creates new form Administrador
      */
     public Main main;
     AdminPalabrasSecretas admin;
-    
-    public Administrador(Main main,AdminPalabrasSecretas admin) {
+
+    public Administrador(Main main, AdminPalabrasSecretas admin) {
         initComponents();
-        this.admin=admin;
-        this.main=main;
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);        
+        this.admin = admin;
+        this.main = main;
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -79,18 +80,18 @@ public class Administrador extends javax.swing.JFrame {
 
     private void btnModoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoFijoActionPerformed
         // TODO add your handling code here:
-        EsModoFijo=true;
-        EsModoAleatorio=false;
-        IngresarPalabraFija dificultad = new IngresarPalabraFija(main,admin);
+        EsModoFijo = true;
+        EsModoAleatorio = false;
+        IngresarPalabraFija dificultad = new IngresarPalabraFija(main, admin);
         dificultad.setVisible(true);
         //this.dispose();
     }//GEN-LAST:event_btnModoFijoActionPerformed
 
     private void btnModoAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoAleatorioActionPerformed
         // TODO add your handling code here:
-        EsModoAleatorio=true;
-                EsModoFijo=false;
-                admin.seleccionarPalabraAzar();
+        EsModoAleatorio = true;
+        EsModoFijo = false;
+        admin.seleccionarPalabraAzar();
         this.dispose();
     }//GEN-LAST:event_btnModoAleatorioActionPerformed
 

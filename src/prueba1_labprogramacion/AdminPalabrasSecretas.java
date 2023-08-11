@@ -16,16 +16,17 @@ public class AdminPalabrasSecretas {
 
     public AdminPalabrasSecretas() {
         this.palabrasSecretas = new ArrayList<>();
-        palabrasSecretas.add("Lana");
-        palabrasSecretas.add("Ingeniera");
-        palabrasSecretas.add("Muneca");
-        palabrasSecretas.add("Bonita");
-        palabrasSecretas.add("Estrella");
-        palabrasSecretas.add("Cielo");
-        palabrasSecretas.add("Luz");
-        palabrasSecretas.add("Bruja");
-        palabrasSecretas.add("Infiel");
-        palabrasSecretas.add("Swiftie");
+        palabrasSecretas.add("lana");
+        palabrasSecretas.add("ingeniera");
+        palabrasSecretas.add("muneca");
+        palabrasSecretas.add("bonita");
+        palabrasSecretas.add("estrella");
+        palabrasSecretas.add("cielo");
+        palabrasSecretas.add("luz");
+        palabrasSecretas.add("bruja");
+        palabrasSecretas.add("infiel");
+        palabrasSecretas.add("swiftie");
+        seleccionarPalabraAzar();
     }
 
     public void agregarPalabraSecreta(String palabra) {
@@ -38,6 +39,17 @@ public class AdminPalabrasSecretas {
         palabra=palabrasSecretas.get(index);
     }
     
+public String actualizarPalabraActual(char letra, String palabraSecreta, String palabraActual) {
+        char[] nuevaPalabraActual = palabraActual.toCharArray();
+
+        for (int i = 0; i < palabraSecreta.length(); i++) {
+            if (palabraSecreta.charAt(i) == letra) {
+                nuevaPalabraActual[i] = letra;
+            }
+        }
+
+        return new String(nuevaPalabraActual);
+    }
     public String palabraSecreta( ){
         return palabra;
     }

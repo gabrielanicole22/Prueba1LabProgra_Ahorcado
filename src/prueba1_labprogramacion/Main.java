@@ -3,23 +3,23 @@ package prueba1_labprogramacion;
 import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
-    
+
     static JuegoAhorcadoAzar azar;
     static JuegoAhorcadoBase base;
     AdminPalabrasSecretas admin;
-    boolean random=Administrador.EsModoAleatorio;
+    boolean random = Administrador.EsModoAleatorio;
+
     public Main() {
         initComponents();
-        this.admin=new AdminPalabrasSecretas();
-                setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.admin = new AdminPalabrasSecretas();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
     }
-    
-    public void setAdmin(AdminPalabrasSecretas admin){
-        this.admin=admin;
+
+    public void setAdmin(AdminPalabrasSecretas admin) {
+        this.admin = admin;
     }
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -83,24 +83,21 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorActionPerformed
-        Administrador aadmin=new Administrador(this,admin);
+        Administrador aadmin = new Administrador(this, admin);
         aadmin.setVisible(true);
- 
+
     }//GEN-LAST:event_btnAdministradorActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-//        Jugar play=new Jugar(this);
-//        play.setVisible(true);
-//        this.dispose
-JOptionPane.showMessageDialog(null,  admin.palabraSecreta());
+        Jugar play = new Jugar(this,admin);
+        play.setVisible(true);
+//JOptionPane.showMessageDialog(null,  admin.palabraSecreta());
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

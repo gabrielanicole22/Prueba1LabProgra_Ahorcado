@@ -1,15 +1,23 @@
 package prueba1_labprogramacion;
 
-public class Jugar extends javax.swing.JFrame {
-    Main main;
-     static JuegoAhorcadoAzar azar;
-    static JuegoAhorcadoBase base;
-    
-    public Jugar(Main main) {
-        initComponents();
-        this.main=main;
-                setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+import javax.swing.JOptionPane;
 
+public class Jugar extends javax.swing.JFrame {
+
+    Main main;
+    static JuegoAhorcadoAzar azar;
+    static JuegoAhorcadoBase base;
+    AdminPalabrasSecretas adminPalabrasSecretas;
+int IntentosRestantes = 6;
+    public Jugar(Main main,AdminPalabrasSecretas admin) {
+        initComponents();
+        this.adminPalabrasSecretas=admin;
+        this.main = main;
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+        adminPalabrasSecretas = new AdminPalabrasSecretas();
+        String PalabraInicial = adminPalabrasSecretas.palabraSecreta();
+        jTextArea1.setText("_".repeat(PalabraInicial.length()));
     }
 
     @SuppressWarnings("unchecked")
@@ -77,11 +85,30 @@ public class Jugar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdivinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdivinarActionPerformed
+        char letra = txtLetra.getText().toLowerCase().charAt(0);
+
+        String palabraSecreta = jTextArea1.getText();
+        
+        String actualizarPalabra = adminPalabrasSecretas.actualizarPalabraActual(letra, adminPalabrasSecretas.palabraSecreta(), palabraSecreta);
+        jTextArea1.setText(actualizarPalabra);
+        txtLetra.setText("");
+
+        if (actualizarPalabra.equals(adminPalabrasSecretas.palabraSecreta())) {
+            JOptionPane.showMessageDialog(this, "¡Has ganado!", "Ganador", JOptionPane.INFORMATION_MESSAGE);
+            this.dispose();
+        } else if (!actualizarPalabra.contains(String.valueOf(letra))) {
+
+            IntentosRestantes--;
+            if (IntentosRestantes == 0) {
+                JOptionPane.showMessageDialog(this, "¡Has perdido! La palabra era: " + adminPalabrasSecretas.palabraSecreta(), "Perdedor", JOptionPane.ERROR_MESSAGE);
+                this.dispose();
+            }
+        }
 
     }//GEN-LAST:event_btnAdivinarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        Main back= new Main ();
+        Main back = new Main();
         back.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
