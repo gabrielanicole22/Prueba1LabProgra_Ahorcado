@@ -43,6 +43,7 @@ public class JuegoAhorcadoAzar extends JuegoAhorcadoBase{
     public void inicializarPalabraSecreta() {
         
     }
+
     public void jugar() {
     }
 
