@@ -6,7 +6,7 @@ package prueba1_labprogramacion;
 
 /**
  *
- * @author User
+ * @author Gabriela Mejía
  */
 public class IngresarPalabraFija extends javax.swing.JFrame {
 
@@ -35,6 +35,11 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
         jLabel1.setText("Ingrese la palabra para jugar Modo Fijo:");
 
         btnEstablecerPalabraFija.setText("Establecer");
+        btnEstablecerPalabraFija.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstablecerPalabraFijaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,6 +67,10 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEstablecerPalabraFijaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstablecerPalabraFijaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEstablecerPalabraFijaActionPerformed
 
     /**
      * @param args the command line arguments
