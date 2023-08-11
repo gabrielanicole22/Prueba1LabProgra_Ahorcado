@@ -2,10 +2,7 @@ package prueba1_labprogramacion;
 
 public class Jugar extends javax.swing.JFrame {
 
-    JuegoAhorcadoAzar azar;
-    JuegoAhorcadoBase base;
-
-    public Jugar(JuegoAhorcadoAzar azar,JuegoAhorcadoBase base) {
+    public Jugar() {
         initComponents();
     }
 

@@ -2,14 +2,11 @@ package prueba1_labprogramacion;
 
 public class Main extends javax.swing.JFrame {
     
-    JuegoAhorcadoAzar azar;
-    JuegoAhorcadoBase base;
+    static JuegoAhorcadoAzar azar;
+    static JuegoAhorcadoBase base;
     
     public Main() {
         initComponents();
-    
-    
-    
     }
     
     
@@ -81,7 +78,7 @@ public class Main extends javax.swing.JFrame {
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
     
-        Jugar play=new Jugar(azar,base);
+        Jugar play=new Jugar();
         play.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnJugarActionPerformed
