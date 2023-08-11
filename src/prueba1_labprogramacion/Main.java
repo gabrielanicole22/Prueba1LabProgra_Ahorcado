@@ -1,5 +1,6 @@
 package prueba1_labprogramacion;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class Main extends javax.swing.JFrame {
@@ -13,7 +14,8 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.admin = new AdminPalabrasSecretas();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
+        Color backgroundColor = new Color(216, 150, 255);
+        getContentPane().setBackground(backgroundColor);
     }
 
     public void setAdmin(AdminPalabrasSecretas admin) {

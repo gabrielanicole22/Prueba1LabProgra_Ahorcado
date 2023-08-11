@@ -1,5 +1,6 @@
 package prueba1_labprogramacion;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class Jugar extends javax.swing.JFrame {
@@ -8,16 +9,18 @@ public class Jugar extends javax.swing.JFrame {
     static JuegoAhorcadoAzar azar;
     static JuegoAhorcadoBase base;
     AdminPalabrasSecretas adminPalabrasSecretas;
-int IntentosRestantes = 6;
-    public Jugar(Main main,AdminPalabrasSecretas admin) {
+    int IntentosRestantes = 6;
+
+    public Jugar(Main main, AdminPalabrasSecretas admin) {
         initComponents();
-        this.adminPalabrasSecretas=admin;
+        this.adminPalabrasSecretas = admin;
         this.main = main;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        
         String PalabraInicial = adminPalabrasSecretas.palabraSecreta();
         jTextArea1.setText("_".repeat(PalabraInicial.length()));
+        Color backgroundColor = new Color(216, 150, 255);
+        getContentPane().setBackground(backgroundColor);
     }
 
     @SuppressWarnings("unchecked")
@@ -88,7 +91,7 @@ int IntentosRestantes = 6;
         char letra = txtLetra.getText().toLowerCase().charAt(0);
 
         String palabraSecreta = jTextArea1.getText();
-        
+
         String actualizarPalabra = adminPalabrasSecretas.actualizarPalabraActual(letra, adminPalabrasSecretas.palabraSecreta(), palabraSecreta);
         jTextArea1.setText(actualizarPalabra);
         txtLetra.setText("");

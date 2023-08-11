@@ -4,6 +4,8 @@
  */
 package prueba1_labprogramacion;
 
+import java.awt.Color;
+
 /**
  *
  * @author Gabriela Mejía
@@ -23,6 +25,8 @@ public class Administrador extends javax.swing.JFrame {
         this.admin = admin;
         this.main = main;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        Color backgroundColor = new Color(255, 231, 246);
+        getContentPane().setBackground(backgroundColor);
     }
 
     /**

@@ -1,18 +1,20 @@
 package prueba1_labprogramacion;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
-
 public class IngresarPalabraFija extends javax.swing.JFrame {
-        AdminPalabrasSecretas admin;
-    
-    public IngresarPalabraFija( Main main,AdminPalabrasSecretas admin) {
+
+    AdminPalabrasSecretas admin;
+
+    public IngresarPalabraFija(Main main, AdminPalabrasSecretas admin) {
         initComponents();
-        this.admin=admin;
+        this.admin = admin;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        Color backgroundColor = new Color(193, 222, 164);
+        getContentPane().setBackground(backgroundColor);
     }
 
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -87,7 +89,6 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
