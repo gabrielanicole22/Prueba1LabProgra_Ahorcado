@@ -1,29 +1,25 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package prueba1_labprogramacion;
 
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
  *
  * @author Gabriela Mejía
  */
-class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
-    private List<String> palabrasPosibles;
-    private Random random;
+public class JuegoAhorcadoFijo extends JuegoAhorcadoBase {
 
-    public JuegoAhorcadoAzar(List<String> palabrasPosibles) {
-        this.palabrasPosibles = palabrasPosibles;
-        this.random = new Random();
-        inicializarPalabraSecreta();
+    public JuegoAhorcadoFijo(String palabraSecreta) {
+        this.palabraSecreta = palabraSecreta;
         this.intentos = 7;
         this.palabraActual = "_".repeat(palabraSecreta.length());
     }
 
     @Override
     public void inicializarPalabraSecreta() {
-        int index = random.nextInt(palabrasPosibles.size());
-        palabraSecreta = palabrasPosibles.get(index);
     }
 
     @Override
@@ -39,7 +35,6 @@ class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
             if (!verificarLetra(letra)) {
                 intentos--;
             }
-
             actualizarPalabraActual(letra);
         }
 
@@ -51,25 +46,27 @@ class JuegoAhorcadoAzar extends JuegoAhorcadoBase {
     }
 
     @Override
-    void actualizarPalabraActual(char letra) {
-        StringBuilder nuevaPalabraActual = new StringBuilder(palabraActual);
-
-        for (int i = 0; i < palabraSecreta.length(); i++) {
-            if (palabraSecreta.charAt(i) == letra) {
-                nuevaPalabraActual.setCharAt(i, letra);
-            }
-        }
-
-        palabraActual = nuevaPalabraActual.toString();
+    public void actualizarPalabraActual(char letra) {
     }
 
+    public String actualizarPalabraActual(char letra, String palabraSecreta, String palabraActual) {
+    char[] nuevaPalabraActual = palabraActual.toCharArray();
+
+    for (int i = 0; i < palabraSecreta.length(); i++) {
+        if (palabraSecreta.charAt(i) == letra) {
+            nuevaPalabraActual[i] = letra;
+        }
+    }
+
+    return new String(nuevaPalabraActual);
+}
     @Override
-    boolean verificarLetra(char letra) {
+    public boolean verificarLetra(char letra) {
         return palabraSecreta.contains(String.valueOf(letra));
     }
 
     @Override
-    boolean hasGanado() {
+    public boolean hasGanado() {
         return palabraActual.equals(palabraSecreta);
     }
 }

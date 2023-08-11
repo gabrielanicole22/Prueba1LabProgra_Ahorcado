@@ -8,12 +8,12 @@ package prueba1_labprogramacion;
  *
  * @author Gabriela Mejia
  */
-public abstract class JuegoAhorcadoBase implements JuegoAhorcado{
+public abstract class JuegoAhorcadoBase implements JuegoAhorcado {
     protected String palabraSecreta;
     protected String palabraActual;
     protected int intentos;
-    
+
     abstract void actualizarPalabraActual(char letra);
-    abstract void verificarLetra(char letra);
-    abstract void hasGanado();
+    abstract boolean verificarLetra(char letra);
+    abstract boolean hasGanado();
 }

@@ -9,6 +9,6 @@ package prueba1_labprogramacion;
  * @author Gabriela Mejía
  */
 public interface JuegoAhorcado {
-    public void inicializarPalabraSecreta();
-    public void jugar();
+    void inicializarPalabraSecreta();
+    void jugar();
 }
