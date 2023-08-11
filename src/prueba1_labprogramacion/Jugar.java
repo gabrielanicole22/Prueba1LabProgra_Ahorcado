@@ -8,6 +8,8 @@ public class Jugar extends javax.swing.JFrame {
     public Jugar(Main main) {
         initComponents();
         this.main=main;
+                setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
     }
 
     @SuppressWarnings("unchecked")

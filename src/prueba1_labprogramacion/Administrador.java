@@ -83,7 +83,7 @@ public class Administrador extends javax.swing.JFrame {
         EsModoAleatorio=false;
         IngresarPalabraFija dificultad = new IngresarPalabraFija(main,admin);
         dificultad.setVisible(true);
-        this.dispose();
+        //this.dispose();
     }//GEN-LAST:event_btnModoFijoActionPerformed
 
     private void btnModoAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoAleatorioActionPerformed

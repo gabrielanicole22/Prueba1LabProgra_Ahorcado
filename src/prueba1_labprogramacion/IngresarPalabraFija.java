@@ -10,6 +10,8 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
     public IngresarPalabraFija( Main main,AdminPalabrasSecretas admin) {
         initComponents();
         this.admin=admin;
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
     }
 
   
@@ -71,23 +73,23 @@ public class IngresarPalabraFija extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEstablecerPalabraFijaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstablecerPalabraFijaActionPerformed
-        String tipo=txtPalabraFija.getText();    
+        String tipo = txtPalabraFija.getText();
 
-       if( txtPalabraFija.getText().isEmpty() ){
-           JOptionPane.showMessageDialog(null, "LLene todos los campos");
-       }else{
-              admin.agregarPalabraSecreta(tipo);
-                
-                    JOptionPane.showMessageDialog(null, "Palabra agregada! ");
+        if (txtPalabraFija.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "LLene todos los campos");
+        } else {
+            admin.agregarPalabraSecreta(tipo);
 
-                } 
+            JOptionPane.showMessageDialog(null, "Palabra agregada! ");
+            this.dispose();
+        }
     }//GEN-LAST:event_btnEstablecerPalabraFijaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEstablecerPalabraFija;

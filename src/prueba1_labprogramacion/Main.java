@@ -1,5 +1,7 @@
 package prueba1_labprogramacion;
 
+import javax.swing.JOptionPane;
+
 public class Main extends javax.swing.JFrame {
     
     static JuegoAhorcadoAzar azar;
@@ -10,6 +12,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.admin=new AdminPalabrasSecretas();
+                setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
     }
     
     public void setAdmin(AdminPalabrasSecretas admin){
@@ -81,13 +85,14 @@ public class Main extends javax.swing.JFrame {
     private void btnAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministradorActionPerformed
         Administrador aadmin=new Administrador(this,admin);
         aadmin.setVisible(true);
-        this.dispose();
+ 
     }//GEN-LAST:event_btnAdministradorActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        Jugar play=new Jugar(this);
-        play.setVisible(true);
-        this.dispose();
+//        Jugar play=new Jugar(this);
+//        play.setVisible(true);
+//        this.dispose
+JOptionPane.showMessageDialog(null,  admin.palabraSecreta(false));
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
