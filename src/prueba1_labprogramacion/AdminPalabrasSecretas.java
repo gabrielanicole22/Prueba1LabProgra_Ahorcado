@@ -10,6 +10,9 @@ import java.util.Random;
  */
 public class AdminPalabrasSecretas {
      List<String> palabrasSecretas;
+     
+     private String palabra;
+     
 
     public AdminPalabrasSecretas() {
         this.palabrasSecretas = new ArrayList<>();
@@ -26,12 +29,20 @@ public class AdminPalabrasSecretas {
     }
 
     public void agregarPalabraSecreta(String palabra) {
-        palabrasSecretas.add(palabra);
+        this.palabra=palabra;
     }
 
     public String seleccionarPalabraAzar() {
         Random random = new Random();
         int index = random.nextInt(palabrasSecretas.size());
         return palabrasSecretas.get(index);
+    }
+    
+    public String palabraSecreta(boolean random){
+        if(random){
+            palabra=seleccionarPalabraAzar();
+        }
+        
+        return palabra;
     }
 }
