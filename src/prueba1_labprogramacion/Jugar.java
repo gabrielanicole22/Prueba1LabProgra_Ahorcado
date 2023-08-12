@@ -19,7 +19,7 @@ public class Jugar extends javax.swing.JFrame {
 
         String PalabraInicial = adminPalabrasSecretas.palabraSecreta();
         jTextArea1.setText("_".repeat(PalabraInicial.length()));
-        Color backgroundColor = new Color(216, 150, 255);
+        Color backgroundColor = new Color(216, 222, 255);
         getContentPane().setBackground(backgroundColor);
     }
 
@@ -42,6 +42,7 @@ public class Jugar extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -88,7 +89,13 @@ public class Jugar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdivinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdivinarActionPerformed
-        char letra = txtLetra.getText().toLowerCase().charAt(0);
+        String letraTexto = txtLetra.getText().trim(); 
+        if (letraTexto.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingresa una letra.", "Campo vacío", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        char letra = letraTexto.toLowerCase().charAt(0);
 
         String palabraSecreta = jTextArea1.getText();
 
@@ -100,19 +107,15 @@ public class Jugar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "¡Has ganado!", "Ganador", JOptionPane.INFORMATION_MESSAGE);
             this.dispose();
         } else if (!actualizarPalabra.contains(String.valueOf(letra))) {
-
             IntentosRestantes--;
             if (IntentosRestantes == 0) {
                 JOptionPane.showMessageDialog(this, "¡Has perdido! La palabra era: " + adminPalabrasSecretas.palabraSecreta(), "Perdedor", JOptionPane.ERROR_MESSAGE);
                 this.dispose();
             }
         }
-
     }//GEN-LAST:event_btnAdivinarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        Main back = new Main();
-        back.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 

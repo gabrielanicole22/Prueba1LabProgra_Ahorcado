@@ -9,17 +9,22 @@ public class Main extends javax.swing.JFrame {
     static JuegoAhorcadoBase base;
     AdminPalabrasSecretas admin;
     boolean random = Administrador.EsModoAleatorio;
+    private boolean modoSeleccionado = false;
 
     public Main() {
         initComponents();
         this.admin = new AdminPalabrasSecretas();
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        Color backgroundColor = new Color(216, 150, 255);
+        Color backgroundColor = new Color(167, 212, 255);
         getContentPane().setBackground(backgroundColor);
     }
 
     public void setAdmin(AdminPalabrasSecretas admin) {
         this.admin = admin;
+    }
+
+    public void setModoSeleccionado(boolean modoSeleccionado) {
+        this.modoSeleccionado = modoSeleccionado;
     }
 
     @SuppressWarnings("unchecked")
@@ -29,9 +34,11 @@ public class Main extends javax.swing.JFrame {
         btnJugar = new javax.swing.JButton();
         btnAdministrador = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnJugar.setBackground(new java.awt.Color(255, 255, 204));
         btnJugar.setText("Jugar");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -39,6 +46,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnAdministrador.setBackground(new java.awt.Color(255, 255, 204));
         btnAdministrador.setText("Administrador");
         btnAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,6 +54,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(255, 255, 204));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,31 +62,37 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("ROMANTICE", 2, 36)); // NOI18N
+        jLabel1.setText("AHORCADO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(236, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(244, 244, 244))
+                .addGap(40, 40, 40))
             .addGroup(layout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(198, 198, 198)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(141, Short.MAX_VALUE)
+                .addContainerGap(102, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(btnAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113)
+                .addGap(92, 92, 92)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -91,9 +106,12 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdministradorActionPerformed
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        Jugar play = new Jugar(this,admin);
+        if (!modoSeleccionado) {
+            JOptionPane.showMessageDialog(this, "Escoge tu modo de juego primero.", "Modo de juego", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Jugar play = new Jugar(this, admin);
         play.setVisible(true);
-//JOptionPane.showMessageDialog(null,  admin.palabraSecreta());
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -136,5 +154,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btnAdministrador;
     private javax.swing.JButton btnJugar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

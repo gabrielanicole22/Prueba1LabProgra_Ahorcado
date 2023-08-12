@@ -12,8 +12,8 @@ import java.awt.Color;
  */
 public class Administrador extends javax.swing.JFrame {
 
-    public static boolean EsModoFijo = true;
-    public static boolean EsModoAleatorio = false;
+    public static boolean EsModoFijo = false;
+    public static boolean EsModoAleatorio = true;
     /**
      * Creates new form Administrador
      */
@@ -28,7 +28,6 @@ public class Administrador extends javax.swing.JFrame {
         Color backgroundColor = new Color(255, 231, 246);
         getContentPane().setBackground(backgroundColor);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -84,11 +83,12 @@ public class Administrador extends javax.swing.JFrame {
 
     private void btnModoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoFijoActionPerformed
         // TODO add your handling code here:
-        EsModoFijo = true;
-        EsModoAleatorio = false;
+        Administrador.EsModoFijo = true;
+        Administrador.EsModoAleatorio = false;
         IngresarPalabraFija dificultad = new IngresarPalabraFija(main, admin);
         dificultad.setVisible(true);
-        //this.dispose();
+        main.setModoSeleccionado(true);
+        this.dispose();
     }//GEN-LAST:event_btnModoFijoActionPerformed
 
     private void btnModoAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoAleatorioActionPerformed
@@ -97,6 +97,7 @@ public class Administrador extends javax.swing.JFrame {
         EsModoFijo = false;
         admin.seleccionarPalabraAzar();
         this.dispose();
+        main.setModoSeleccionado(true); // 
     }//GEN-LAST:event_btnModoAleatorioActionPerformed
 
     /**
